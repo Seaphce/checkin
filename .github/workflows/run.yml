@@ -1,4 +1,4 @@
-name: run
+name: myCheckin
 
 on:
   workflow_dispatch:
