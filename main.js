@@ -12,6 +12,8 @@ const glados = async () => {
       headers: { ...headers, 'content-type': 'application/json' },
       body: '{"token":"glados.one"}',
     }).then((r) => r.json())
+    console.log(`checkin result - ${checkin.message}`);
+    
     const status = await fetch('https://glados.rocks/api/user/status', {
       method: 'GET',
       headers,
@@ -46,7 +48,8 @@ const notify = async (contents) => {
 }
 
 const main = async () => {
-  await notify(await glados())
+  // await notify(await glados())
+  await glados()
 }
 
 main()
